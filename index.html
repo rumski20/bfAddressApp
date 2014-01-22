@@ -1,0 +1,396 @@
+<!doctype html>
+<html>
+<head>
+		<title>Bayfield County - Address Application</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bfStyle.css">
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+		<script src="js/bfAddressApp.js"></script>
+		<script src="http://js.arcgis.com/3.8compact"></script>
+		<!-- <script> // what's this about?
+		//  $( document ).on( "pageinit", "#two", function( event ) {
+		//    $("#nextM").click(function (e) {
+		//      e.stopImmediatePropagation();
+		//      e.preventDefault();
+		//      execute();
+					
+		//    });
+		//  });
+		//  // what's this about?
+		//  $( document ).on( "pageinit", "#three", function( event ) {
+		//    alert("Legal Description is: "+ownName);
+		//  });
+		// </script> -->
+		<!--<script src="js/parcelQuery.js"></script>-->
+
+
+
+</head>
+<body>
+
+		<!-- Start of first page: #one -->
+		<div data-role="page" id="one" data-theme="a">
+			
+				<div data-role="header">
+						<!--<h1>Bayfield County - Address Application</h1>-->
+						<div align="center">
+						<img src="images/BC_header.jpg" class="ui-btn-center" />
+						</div>
+				</div><!-- /header -->
+				
+				<div class="content-primary">
+
+				<form action="#" method="get">
+
+					<h2>Applicant Contact Information</h2>
+
+					<div class="ui-field-contain">
+							 <label for="name">Name:</label>
+							 <input type="text" name="Name" id="aName" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">Mailing Address:</label>
+							 <input type="text" name="Mailing Address" id="mAddress" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">City:</label>
+							 <input type="text" name="City" id="aCity" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">State:</label>
+							 <!--<input type="text" name="state" id="state" value=""  />-->
+							 <select name="State" id="aState">
+									<option value="AL">Alabama</option>
+									<option value="AK">Alaska</option>
+									<option value="AZ">Arizona</option>
+									<option value="AR">Arkansas</option>
+									<option value="CA">California</option>
+									<option value="CO">Colorado</option>
+									<option value="CT">Connecticut</option>
+									<option value="DE">Delaware</option>
+									<option value="FL">Florida</option>
+									<option value="GA">Georgia</option>
+									<option value="HI">Hawaii</option>
+									<option value="ID">Idaho</option>
+									<option value="IL">Illinois</option>
+									<option value="IN">Indiana</option>
+									<option value="IA">Iowa</option>
+									<option value="KS">Kansas</option>
+									<option value="KY">Kentucky</option>
+									<option value="LA">Louisiana</option>
+									<option value="ME">Maine</option>
+									<option value="MD">Maryland</option>
+									<option value="MA">Massachusetts</option>
+									<option value="MI">Michigan</option>
+									<option value="MN">Minnesota</option>
+									<option value="MS">Mississippi</option>
+									<option value="MO">Missouri</option>
+									<option value="MT">Montana</option>
+									<option value="NE">Nebraska</option>
+									<option value="NV">Nevada</option>
+									<option value="NH">New Hampshire</option>
+									<option value="NJ">New Jersey</option>
+									<option value="NM">New Mexico</option>
+									<option value="NY">New York</option>
+									<option value="NC">North Carolina</option>
+									<option value="ND">North Dakota</option>
+									<option value="OH">Ohio</option>
+									<option value="OK">Oklahoma</option>
+									<option value="OR">Oregon</option>
+									<option value="PA">Pennsylvania</option>
+									<option value="RI">Rhode Island</option>
+									<option value="SC">South Carolina</option>
+									<option value="SD">South Dakota</option>
+									<option value="TN">Tennessee</option>
+									<option value="TX">Texas</option>
+									<option value="UT">Utah</option>
+									<option value="VT">Vermont</option>
+									<option value="VA">Virginia</option>
+									<option value="WA">Washington</option>
+									<option value="WV">West Virginia</option>
+									<option value="WI" selected>Wisconsin</option>
+									<option value="WY">Wyoming</option>
+							 </select>
+							 <br />
+							 <br />
+							 <label for="name">Zip:</label>
+							 <input type="text" name="Zip" id="aZip" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">Telephone:</label>
+							 <input type="text" name="Phone" id="aPhone" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">E-Mail:</label>
+							 <input type="text" name="E-mail" id="aEmail" value=""  />
+					</div>
+
+					<div class="ui-body ui-body-b" style="padding-left:20px">
+					<!--<fieldset class="ui-grid-a"></fieldset>-->
+							<!--<div class="ui-block-a"><button type="submit" data-theme="d">Cancel</button></div>
+							<div class="ui-block-b"><center><button type="submit" data-theme="a">Submit</button></center>href="ownerInfo.html"--> 
+							<a class="next" href="#confirmFormDialog" data-role="button" data-transition="slidefade" data-inline="true">Next</a>           
+							<div style="padding-right:20px;float:right"><!--float="left" -->
+							Step 1 of 5
+							</div>
+					</div> <!-- ui-body -->
+					
+				</div>
+			</form>
+			</div><!--/content-primary -->
+		</div><!-- /page one-->
+		
+		<!-- Start of second page: #two -->
+		<div data-role="page" id="two" data-theme="a">
+
+			<div data-role="header">
+					<!--<h1>Bayfield County - Address Application</h1>-->
+					<div align="center">
+					<img src="images/BC_header.jpg" class="ui-btn-center" />
+					</div>
+			</div><!-- /header -->
+				
+			<div class="content-primary">
+
+				<form action="#" method="get">
+
+					<h2>Owner Contact Information</h2>
+
+					<label><input type="checkbox" name="checkboxO2A" data-mini="true">copy fields from applicant information</label>
+
+					<div class="ui-field-contain">
+							 <label for="name">Name:</label>
+							 <input type="text" name="Name" id="name" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">Mailing Address:</label>
+							 <input type="text" name="Mailing Address" id="mAddress" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">City:</label>
+							 <input type="text" name="City" id="city" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">State:</label>
+							 <!--<input type="text" name="state" id="state" value=""  />-->
+							 <select name="State" id="state">
+									<option value="AL">Alabama</option>
+									<option value="AK">Alaska</option>
+									<option value="AZ">Arizona</option>
+									<option value="AR">Arkansas</option>
+									<option value="CA">California</option>
+									<option value="CO">Colorado</option>
+									<option value="CT">Connecticut</option>
+									<option value="DE">Delaware</option>
+									<option value="FL">Florida</option>
+									<option value="GA">Georgia</option>
+									<option value="HI">Hawaii</option>
+									<option value="ID">Idaho</option>
+									<option value="IL">Illinois</option>
+									<option value="IN">Indiana</option>
+									<option value="IA">Iowa</option>
+									<option value="KS">Kansas</option>
+									<option value="KY">Kentucky</option>
+									<option value="LA">Louisiana</option>
+									<option value="ME">Maine</option>
+									<option value="MD">Maryland</option>
+									<option value="MA">Massachusetts</option>
+									<option value="MI">Michigan</option>
+									<option value="MN">Minnesota</option>
+									<option value="MS">Mississippi</option>
+									<option value="MO">Missouri</option>
+									<option value="MT">Montana</option>
+									<option value="NE">Nebraska</option>
+									<option value="NV">Nevada</option>
+									<option value="NH">New Hampshire</option>
+									<option value="NJ">New Jersey</option>
+									<option value="NM">New Mexico</option>
+									<option value="NY">New York</option>
+									<option value="NC">North Carolina</option>
+									<option value="ND">North Dakota</option>
+									<option value="OH">Ohio</option>
+									<option value="OK">Oklahoma</option>
+									<option value="OR">Oregon</option>
+									<option value="PA">Pennsylvania</option>
+									<option value="RI">Rhode Island</option>
+									<option value="SC">South Carolina</option>
+									<option value="SD">South Dakota</option>
+									<option value="TN">Tennessee</option>
+									<option value="TX">Texas</option>
+									<option value="UT">Utah</option>
+									<option value="VT">Vermont</option>
+									<option value="VA">Virginia</option>
+									<option value="WA">Washington</option>
+									<option value="WV">West Virginia</option>
+									<option value="WI" selected>Wisconsin</option>
+									<option value="WY">Wyoming</option>
+							 </select>
+							 <br />
+							 <br />
+							 <label for="name">Zip:</label>
+							 <input type="text" name="Zip" id="zip" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">Telephone:</label>
+							 <input type="text" name="Phone" id="phone" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">E-Mail:</label>
+							 <input type="text" name="E-mail" id="email" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">Tax ID No. (from tax statement):</label>
+							 <input type="text" name="parcelPIN" id="parcelPIN" value="" placeholder="ex. 33070"/>
+							 <div class="reqFld"><em>
+							 	*Required for all parcels not on tribal lands. 
+							 	Contact (715) 373-6156 for more information.
+							 </em></div>
+ 
+					</div>
+
+					<div class="ui-body ui-body-b" style="padding-left:20px">
+					<!--<fieldset class="ui-grid-a"></fieldset>-->
+							<!--<div class="ui-block-a"><button type="submit" data-theme="d">Cancel</button></div>
+							<div class="ui-block-b"><center><button type="submit" data-theme="a">Submit</button></center>-->
+							<a href="#one" data-role="button" data-transition="slidefade" data-direction="reverse" data-inline="true">Back</a>  
+							
+							<a class="next" href="#" data-role="button" data-transition="slidefade" data-inline="true">Next</a>           
+							
+							<div style="padding-right:20px;float:right"><!--float="left" -->
+							Step 2 of 5
+							</div>
+					</div> <!-- ui-body -->
+					
+				</form>
+
+			</div><!--/content-primary -->
+
+			<!-- Confirm form entry -->
+			<div id="validateParcelPIN" data-role="popup" data-dialog="true" data-transition="pop" data-theme="a">
+			  <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<div data-role="header" style="color:red">
+					<h6>Tax ID No. Required!</h6>
+			  </div>
+			  <input type="button" id="tlButton" data-mini="true" value="Click here for Tribal Lands" data-icon="carat-r" data-iconpos="right">
+			</div>
+			
+		</div><!-- /page two -->
+		
+		<!-- Start of third page: #three -->
+		<div data-role="page" id="three" data-theme="a">
+
+			<div data-role="header">
+					<!--<h1>Bayfield County - Address Application</h1>-->
+					<div align="center">
+					<img src="images/BC_header.jpg" class="ui-btn-center" />
+					</div>
+			</div><!-- /header -->
+				
+			<div class="content-primary">
+
+				<form action="#" method="get">
+
+					<h2>Building Location Information</h2>
+					<em id="fieldUpdate"></em>
+
+					<div class="ui-field-contain">
+							 <label for="name">Legal Description (from deed):</label>
+							 <input type="text" name="Legal Description" id="legalDes" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">Section:</label>
+							 <input type="text" name="Section" id="section" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">Township:</label>
+							 <input type="text" name="Township" id="twp" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">Range:</label>
+							 <input type="text" name="Range" id="range" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">Town - Village:</label>
+							 <input type="text" name="Town - Village" id="townV" value=""  />
+							 <br />
+							 <br />
+							 <!--<label for="name">Tax ID No. (from tax statement):</label>
+							 <input type="text" name="parcelPIN" id="parcelPIN" value=""  />
+							 <br />
+							 <br />-->
+							 <label for="name">Road Name:</label>
+							 <input type="text" name="Road Name" id="roadName" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">I am on which side of the road:</label>
+							 <select name="Road Direction" id="roadDir" data-native-menu="false">
+								<option value="N">North</option>
+								<option value="S">South</option>
+								<option value="E">East</option>
+								<option value="W">West</option>
+							 </select>
+							 <br />
+							 <br />
+							 <label for="name">My closest neighbor's name and address is:</label>
+							 <input type="text" name="Neighbor's Address" id="nAddress" value=""  />
+							 <br />
+							 <br />
+							 <label for="name">I am located on which side of my neighbor's driveway:</label>
+							 <select name="Driveway Direction" id="drivewayD" data-native-menu="false">
+								<option value="N">North</option>
+								<option value="S">South</option>
+								<option value="E">East</option>
+								<option value="W">West</option>
+							 </select>
+					</div>
+
+					<div class="ui-body ui-body-b" style="padding-left:20px">
+						<!--<fieldset class="ui-grid-a"></fieldset>-->
+						<!--<div class="ui-block-a"><button type="submit" data-theme="d">Cancel</button></div>
+						<div class="ui-block-b"><center><button type="submit" data-theme="a">Submit</button></center>-->
+						<a href="#two" data-role="button" data-transition="slidefade" data-direction="reverse" data-inline="true">Back</a>            
+						<a class="next" rel="external" href="mapPage.html" data-role="button" data-transition="slidefade" data-inline="true">Next</a>            
+						<div style="padding-right:20px;float:right"><!--float="left" -->
+						Step 3 of 5
+						</div>
+					</div>
+					
+				</form>
+			</div><!--/content-primary -->
+			
+		</div><!-- /page three -->
+
+		<!-- Confirm form entry -->
+		<div id="confirmFormDialog" data-role="page" data-dialog="true" data-transition="pop" data-theme="a">
+			<div data-role="header">
+				<!-- cancel button returns to previous page -->
+		    <a href="#" data-rel="back" data-icon="delete">Cancel</a>
+				<h6>Confirm Applicant Info</h6>
+				<!-- continue button goes onto the next page -->
+				<a id="continueButton" href="#" data-icon="check">Continue</a>
+		  </div>
+		  <div id="confirmDialogContent" class="ui-body ui-body-a">
+		  <!-- content (loaded programatically) will go here -->
+		  </div>
+		</div>
+
+		<!-- Confirm form entry -->
+		<div id="confirmFormDialog" data-role="page" data-dialog="true" data-transition="pop" data-theme="a">
+			<div data-role="header">
+				<!-- cancel button returns to previous page -->
+		    <a href="#" data-rel="back" data-icon="delete">Cancel</a>
+				<h6>Confirm Applicant Info</h6>
+				<!-- continue button goes onto the next page -->
+				<a id="continueButton" data-rel="external" href="#" data-icon="check">Continue</a>
+		  </div>
+		  <div id="confirmDialogContent" class="ui-body ui-body-a">
+		  <!-- content (loaded programatically) will go here -->
+		  </div>
+		</div>
+
+		
+		
+</body>
+</html>
